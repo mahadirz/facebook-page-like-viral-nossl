@@ -1,0 +1,17 @@
+# protect setting
+<files setting>
+order allow,deny
+deny from all
+</files>
+
+# disable directory browsing
+Options All -Indexes
+
+
+
+# STRONG HTACCESS PROTECTION</code>
+<Files ~ "^.*\.([Hh][Tt][Aa])">
+order allow,deny
+deny from all
+satisfy all
+</Files>
