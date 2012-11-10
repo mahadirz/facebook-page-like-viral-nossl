@@ -1,7 +1,7 @@
 <?php
 class functionAdd
 {
-    function write_php_ini($array, $file)
+    public function write_php_ini($array, $file)
     {
         $res = array();
         foreach ($array as $key => $val) {
@@ -15,7 +15,7 @@ class functionAdd
         $this->safefilerewrite($file, implode("\r\n", $res));
     }
 
-    function safefilerewrite($fileName, $dataToSave)
+    private function safefilerewrite($fileName, $dataToSave)
     {
         if ($fp = fopen($fileName, 'w')) {
             $startTime = microtime();
@@ -35,7 +35,7 @@ class functionAdd
         }
     }
 
-    function random_template($min, $max)
+    public function random_template($min, $max)
     {
         $random_number = rand($min, $max);
         $img_extension = 'jpg'; //change here according to your image extension
@@ -43,7 +43,7 @@ class functionAdd
     }
 
 
-    function curDirURL()
+    public function curDirURL()
     {
         $pageURL = 'http';
         if ($_SERVER["HTTPS"] == "on") {
@@ -54,8 +54,8 @@ class functionAdd
             $pageURL .= $_SERVER["SERVER_NAME"] . ":" . $_SERVER["SERVER_PORT"] . $_SERVER["REQUEST_URI"];
         } else {
             $pageURL .= $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
-            $ifindex = strrpos($pageURL, "index.php");
-            if ($ifindex != FALSE)
+            preg_match("/\.php$/i",$pageURL,$matchfile);
+            if (isset($matchfile[0]))
                 $dirname = dirname($pageURL);
             else
                 $dirname = $pageURL;
@@ -63,7 +63,7 @@ class functionAdd
         return $dirname;
     }
 
-    function createimg($url)
+    public function createimg($url)
     {
         if (exif_imagetype($url) == IMAGETYPE_JPEG) {
             return imagecreatefromjpeg($url);
@@ -75,7 +75,7 @@ class functionAdd
             return imagecreatefromgif($url);
         }
     }
-    function getredirect($url)
+    public function getredirect($url)
     {
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_HEADER, true);
@@ -89,7 +89,7 @@ class functionAdd
         return substr($response, $pos, strpos($response, "\r\n", $pos) - $pos);
     }
 
-    function CenterText($text, $txtsize, $txtfont, $sizebox)
+    public function CenterText($text, $txtsize, $txtfont, $sizebox)
     {
         $box        = @ImageTTFBBox($txtsize, 0, $txtfont, $text);
         $textwidth  = abs($box[4] - $box[0]);
