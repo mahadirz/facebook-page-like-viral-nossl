@@ -1,6 +1,6 @@
 APPID = 486007601444162
-APPSECRET = "788f04641c9f34e9a305dea53ab3e2xx"
-URLTAB = "https://www.facebook.com/pages/Asyik-baca-status-orang-len-ja-aku-nak-tulis-gak/228534310490786?sk=app_137541772984354"
-IMGCAPTION = "Wow!! just know that %name% have same face with %random_friend%. Crazy isn't?Try it here to know which friend have same face with you. http://on.fb.me/OQdndF"
+APPSECRET = "788f04641c9f34e9a305dea53axxxxxx"
+URLTAB = "https://www.facebook.com/AplikasiMukaBukuMalaysia/app_221460014534454"
+IMGCAPTION = "Wow!! just know that %name% have same face with %random_friend%. Crazy isn't?Try it here to know which friend have same face with you. http://jomshare.me/sameface"
 NONFANIMG = "nonfan.jpg"
-PREVIEW = 1
+PREVIEW = 0
